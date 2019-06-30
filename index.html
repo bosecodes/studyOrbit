@@ -1,3 +1,30 @@
+<!---
+
+JUNE FINAL UPDATE:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+@BOSECODES
+
+1. Resized the logo, still imperfect, need further optimization from the graphics wing to get a statement logo instead of just the image. 
+2. Updated the navbar, now contains all the links and subsections as proposed in Ridhi's hand drawn prototype.
+3. Added a marquee section that hosts the mentor speaks section, for the time being, it contains dummy text, life will be added later :)
+4. Added background images that might suit the website, IIT Delhi, AIIMS, and IISc should be in the background of the home page header. However, the images aren't still suitable, lack character :/. Ahoy, Graphics team!
+5. Added a Log in section containing sections that allows users to create a new account (Sign up), to Sign in using their email id's and password, or even log in through their social media handles, Google Plus and Facebook.
+6.  That's pretty much it. I expect more cooperation from the rest of you. Project will get delayed otherwise. Come on guys, a Slack session between Tuesday and Thursday.
+
+
+
+---->
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,7 +37,7 @@
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
-
+		<link href= "https://fonts.googleapis.com/css?family=QuickSand" rel = "stylesheet">
 		<!-- Bootstrap -->
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
@@ -54,15 +81,70 @@
 				<nav id="nav">
 					<ul class="main-menu nav navbar-nav navbar-right">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Courses</a></li>
+						<li><a href="#logreg-forms">Sign in</a></li>
 						<li><a href="blog.html">Blog</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="#">Forums</a></li>
+						<li><a href="#about">Services</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
 					</ul>
 				</nav>
 				<!-- /Navigation -->
-
+				
+					
 			</div>
+			<style style="text/css">
+				.marquee {
+				 height: 50px;	
+				 overflow: hidden;
+				 position: relative;
+				 background-color: black;
+				 opacity: 0.5;
+				 color: white;
+				 border: 1px solid orange;
+				}
+				.marquee p {
+				 position: absolute;
+				 width: 100%;
+				 height: 100%;
+				 margin: 0;
+				 line-height: 50px;
+				 text-align: center;
+				 /* Starting position */
+				 -moz-transform:translateX(100%);
+				 -webkit-transform:translateX(100%);	
+				 transform:translateX(100%);
+				 /* Apply animation to this element */	
+				 -moz-animation: scroll-left 20s linear infinite;
+				 -webkit-animation: scroll-left 20s linear infinite;
+				 animation: scroll-left 20s linear infinite;
+				}
+				/* Move it (define the animation) */
+				@-moz-keyframes scroll-left {
+				 0%   { -moz-transform: translateX(100%); }
+				 100% { -moz-transform: translateX(-100%); }
+				}
+				@-webkit-keyframes scroll-left {
+				 0%   { -webkit-transform: translateX(100%); }
+				 100% { -webkit-transform: translateX(-100%); }
+				}
+				@keyframes scroll-left {
+				 0%   { 
+				 -moz-transform: translateX(100%); /* Browser bug fix */
+				 -webkit-transform: translateX(100%); /* Browser bug fix */
+				 transform: translateX(100%); 		
+				 }
+				 100% { 
+				 -moz-transform: translateX(-100%); /* Browser bug fix */
+				 -webkit-transform: translateX(-100%); /* Browser bug fix */
+				 transform: translateX(-100%); 
+				 }
+				}
+				</style>
+				
+				<div class="marquee">
+				<p>Mentor Speaks: As you sow, so shall you reap, <b>Rachit Jain, IISc Bangalore</b> </p>
+				</div>
 		</header>
 		<!-- /Header -->
 
@@ -70,7 +152,9 @@
 		<div id="home" class="hero-area">
 
 			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/home-background.jpg)"></div>
+			<div class="bg-image bg-parallax overlay"
+			style="background-image:url(./img/home-background.jpg); background-size: cover; background-position: center;">
+		</div>
 			<!-- /Backgound Image -->
 
 			<div class="home-wrapper">
@@ -84,10 +168,61 @@
 					</div>
 				</div>
 			</div>
-
+			
 		</div>
 		<!-- /Home -->
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/font-awesome.min.css">
+		<div class = "hero-area" style = "background-image: url('../img/blog04.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+		<div id="logreg-forms">
+			<form class="form-signin">
+				<h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Log in</h1>
+				<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+				
+				<button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+				<a href="#" id="forgot_pswd">Forgot password?</a>
+				<hr>
+				<div class="social-login">
+					<button class="btn facebook-btn social-btn" type="button" style = "font-size: 35px"><span><i class="fa fa-facebook-f"></i></span> </button>
+					<button class="btn google-btn social-btn" type="button" style = "font-size: 35px"><span><i class="fa fa-google-plus-square"></i></span> </button>
+				</div>
+				<!-- <p>Don't have an account!</p>  -->
+				<button class="btn btn-primary btn-block" type="button" id="btn-signup"> Sign up for a New Account</button>
+				</form>
+	
+				<form action="/reset/password/" class="form-reset">
+					<input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+					<button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+					<a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+				</form>
+				
+				<form action="/signup/" class="form-signup">
+					<div class="social-login">
+						<button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+					</div>
+					<div class="social-login">
+						<button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+					</div>
+					
+					<p style="text-align:center">OR</p>
+	
+					<input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+					<input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+					<input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+					<input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+	
+					<button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+					<a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+				</form>
+				<br>
+				
+		</div>
+		<p style="text-align:center">
+			
+		</p>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		</div>
 		<!-- About -->
 		<div id="about" class="section">
 
@@ -99,7 +234,7 @@
 
 					<div class="col-md-6">
 						<div class="section-header">
-							<h2>Welcome to Edusite</h2>
+							<h2>Our Services</h2>
 							<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
 						</div>
 
